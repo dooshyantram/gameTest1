@@ -1,0 +1,249 @@
+  <!DOCTYPE HTML>
+  <html>
+  <head>
+  	<title>English Assessment</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  	<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
+  	<script src="js/jquery.js"></script>
+  	<script src="js/jquery.mobile-1.4.5.js"></script>
+
+      
+    <style>
+      
+
+      [data-role=page] {
+        height: 100% !important;
+        position: relative !important;
+      }
+
+      [data-role=footer] {
+        bottom: 0;
+        position: absolute !important;
+        top: auto !important;
+        width: 100%;
+      }
+      
+
+      div.gallery {
+
+    border: 3px solid #A0522D;
+    margin: 0 auto;
+    width: 210px;
+
+  }
+
+  div.gallery:hover {
+    border: 3px solid #777;
+  }
+
+  div.gallery img {
+    width: 100%;
+    height: auto;
+  }
+
+  div.desc {
+    padding:5px;
+    text-align: center;
+  }
+
+
+   .field{
+    border: 1px solid #DEB887;
+  }
+   
+   .zoli{
+    background-color: solid blue;
+   }
+    </style>
+  </head>
+
+
+   <body>
+   	<!--Page Home Starts Here-->
+   	<div data-role="page" data-dialog="false" id ="home" data-theme="a">
+   		<div data-role="header">
+   			<h1 >ENGLISH ASSESSMENT</h1>
+                
+
+      </div>
+
+   		<div role="main" class="ui-content">
+   			
+   			<div data-role="navbar">
+
+                  <ul>
+                    <li><a href="#q1" class="ui-corner-all" data-transition="slide">TAKE VOCABULARY TEST</a></li>
+                    
+                  </ul>
+                  
+                </div>
+       
+   		</div>
+
+   		<div data-role="footer">
+   			<h2>Homework</h2>
+   		</div>
+   	</div>
+
+
+
+
+      <!--Question 1-->
+    <div data-role="page" data-dialog="false" id ="q1" data-theme="a" data-prev="" data-next="#q2">
+      <div data-role="header" >
+         <a href="#home" id="calc" data-transition="slide"  class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-back ui-btn-icon-left" >HOME</a>
+        <h1 data-icon="home">Question 1</h1>
+                
+      </div>
+
+  <div role="main" class="ui-content">
+     <div>
+      <div class="gallery">
+         <a target="_blank" href="img_lights.jpg">
+         <img src="img/laugh.gif" alt="Northern Lights" width="600" height="400">
+         </a>
+       <div class="desc">The man is _____ ?</div>
+      </div>
+    </div>
+    
+
+    <div>
+       <form>
+          <fieldset data-role="controlgroup" id="1" data-iconpos="right" class="field">
+            <div class="field">
+            <label class="zoli"><input name="radio" id="r11" type="radio" value="bad" checked="checked" class="zoli"> A. Angry</label>
+            <label  class="bg-primary"><input name="radio" id="r12" type="radio" value="good"> B. Sad </label>
+            <label class="bg-primary"><input name="radio" id="r13" type="radio" value="bad"> C. Happy</label>
+            </div>
+          </fieldset>
+        </form>
+     </div>
+     
+  </div>
+      </div>
+
+
+    </div>
+
+
+
+
+
+
+    <!--Question 2-->
+    <div data-role="page" data-dialog="false" id ="q2" data-theme="a" data-prev="#q1" data-next="#q3">
+      <div data-role="header">
+        <h1>Question 2</h1>
+                
+      </div>
+
+      <div role="main" class="ui-content">
+        <p class="">This is a jquery mobile excercise which provides the user with calculatore for the basic mathematical operations</p>
+        
+       
+      </div>
+      <a href="#q1" id="calc" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Previous</a>
+       
+      
+    </div>
+
+
+   
+   <!--Question 2-->
+    <div data-role="page" data-dialog="false"  id ="q3" data-theme="a" data-prev="#q2" data-next="">
+      <div data-role="header">
+        <h1>Question 3</h1>
+                
+      </div>
+
+      <div role="main" class="ui-content">
+        <p class="">This is a jquery mobile excercise which provides the user with calculatore for the basic mathematical operations</p>
+        
+       
+      </div>
+      <a href="#q1" id="calc" data-transition="slide" class="ui-btn ui-corner-all ui-shadow ui-btn-b">Previous</a>
+       
+      
+    </div>
+
+
+
+   	
+
+
+
+   		
+   	
+
+      
+
+
+  <!--<script type="text/javascript">
+    
+   $(document).on('swipeleft swiperight', function (event) {
+      // next page
+      if (event.type == 'swipeleft') {
+          var nextPage = $.mobile.activePage.next('[class=lala]');
+          if (nextPage) {
+              $.mobile.changePage(nextPage, {
+                  transition: "slide" // or any transition
+              });
+          }
+      }
+      // previous page
+      if (event.type == 'swiperight') {
+          var prevPage = $.mobile.activePage.prev('[class=lala]');
+          if (prevPage) {
+              $.mobile.changePage(prevPage, {
+                  transition: "slide",
+                  reverse: true // reverse effect
+              });
+          }
+      }
+  });
+
+  </script>-->
+
+
+
+  <script type="text/javascript">
+    
+
+    function navnext( next ) {
+      $( ":mobile-pagecontainer" ).pagecontainer( "change", next, {
+          transition: "slide"
+      });
+  }
+  function navprev( prev ) {
+      $( ":mobile-pagecontainer" ).pagecontainer( "change", prev, {
+          transition: "slide",
+          reverse: true
+      });
+  }
+
+
+  $( document ).one( "pagecreate", "#q1", function() {
+      // Handler for navigating to the next page
+      // Navigate to the next page on swipeleft
+      $( document ).on( "swipeleft", ".ui-page", function( event ) {
+          // Get the filename of the next page. We stored that in the data-next
+          // attribute in the original markup.
+          var next = $( this ).jqmData( "next" );
+          if ( next ) {
+              navnext( next );
+          }
+      });
+      // The same for the navigating to the previous page
+      $( document ).on( "swiperight", ".ui-page", function( event ) {
+          var prev = $( this ).jqmData( "prev" );
+          if (prev) {
+              navprev( prev );
+          }
+      });
+  });
+  </script>
+
+   	</body>
+
+  </html>	

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>English Assessment</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="js/jquery.mobile-1.4.5.css">
+	<script src="js/jquery.js"></script>
+	<script src="js/jquery.mobile-1.4.5.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <style>
+    
+
+    [data-role=page] {
+      height: 100% !important;
+      position: relative !important;
+    }
+
+    [data-role=footer] {
+      bottom: 0;
+      position: absolute !important;
+      top: auto !important;
+      width: 100%;
+    }
+    
+ 
+  </style>
+</head>
+
+
+ <body>
+ 	<!--Page Home Starts Here-->
+ 	<div data-role="page" data-dialog="false" id ="home" data-theme="a">
+ 		<div data-role="header">
+ 			<h1 >ENGLISH ASSESSMENT</h1>
+              
+
+    </div>
+
+ 		<div role="main" class="ui-content">
+ 			
+ 			<div data-role="navbar">
+
+                <ul>
+                  <li><a href="#lala" class="ui-corner-all" data-transition="slide">TAKE VOCABULARY TEST</a></li>
+                  
+                </ul>
+                
+              </div>
+     
+ 		</div>
+
+ 		<div data-role="footer">
+ 			<h2>Homework</h2>
+ 		</div>
+ 	</div>
+
+
+
+
+    <!--Question 1-->
+  <div data-role="page" data-dialog="false" id="lala"  data-theme="a" >
+    <div data-role="header" >
+       <a href="#home" id="calc" data-transition="slide"  class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-icon-back ui-btn-icon-left" >HOME</a>
+      <h1 data-icon="home">Question 1</h1>
+              
+    </div>
+
+    <div role="main" id ="q1" class="ui-content" data-prev="" data-next="#q2">
+     <form>
+        <fieldset data-role="controlgroup" id="1" data-iconpos="right" >
+          <h4 class="card-header">I haven`t got _____________</h4><br>
+          <label class="bg-primary"><input name="radio" data-theme="d" id="r11" type="radio" value="good" checked="checked"> A. no brothers or sisters </label>
+          <label  class="bg-primary"><input name="radio" id="r12" type="radio" value="bad"> B. brothers or sisters </label>
+          <label class="bg-primary"><input name="radio" id="r13" type="radio" value="bad"> C. any brothers or sisters </label>
+          <label  class="bg-primary"><input name="radio" id="r14" type="radio" value="bad">D. some brothers and sisters</label>
+        </fieldset>
+      </form>
+     
+    </div>
+
+
+ <div role="main" class="ui-content" data-prev="#q1" data-next="#q3">
+      <p class="">This is a jquery mobile excercise which provides the user with calculatore for the basic mathematical operations</p>
+      
+     
+    </div>
+
+
+ <div role="main" class="ui-content" data-prev="#q2" data-next="">
+      <p class="">This is a jquery mobile excercise which provides the user with calculatore for the basic mathematical operations</p>
+      
+     
+    </div>
+
+
+
+
+
+
+       <a href="#q2" id="calc" data-transition="slide" class="ui-btn ui-corner-all ui-btn-a bg-warning">NEXT</a>
+    <div data-role="footer">
+      
+    
+    </div>
+  </div>
+
+
+
+
+
+
+  
+
+
+
+ 	
+
+
+
+ 		
+ 	
+
+    
+
+
+<!--<script type="text/javascript">
+  
+ $(document).on('swipeleft swiperight', function (event) {
+    // next page
+    if (event.type == 'swipeleft') {
+        var nextPage = $.mobile.activePage.next('[class=lala]');
+        if (nextPage) {
+            $.mobile.changePage(nextPage, {
+                transition: "slide" // or any transition
+            });
+        }
+    }
+    // previous page
+    if (event.type == 'swiperight') {
+        var prevPage = $.mobile.activePage.prev('[class=lala]');
+        if (prevPage) {
+            $.mobile.changePage(prevPage, {
+                transition: "slide",
+                reverse: true // reverse effect
+            });
+        }
+    }
+});
+
+</script>-->
+
+
+
+<script type="text/javascript">
+  
+
+  function navnext( next ) {
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", next, {
+        transition: "slide"
+    });
+}
+function navprev( prev ) {
+    $( ":mobile-pagecontainer" ).pagecontainer( "change", prev, {
+        transition: "slide",
+        reverse: true
+    });
+}
+
+
+$( document ).one( "pagecreate", "#q1", function() {
+    // Handler for navigating to the next page
+    // Navigate to the next page on swipeleft
+    $( document ).on( "swipeleft", ".ui-page", function( event ) {
+        // Get the filename of the next page. We stored that in the data-next
+        // attribute in the original markup.
+        var next = $( this ).jqmData( "next" );
+        if ( next ) {
+            navnext( next );
+        }
+    });
+    // The same for the navigating to the previous page
+    $( document ).on( "swiperight", ".ui-page", function( event ) {
+        var prev = $( this ).jqmData( "prev" );
+        if (prev) {
+            navprev( prev );
+        }
+    });
+});
+</script>
+
+ 	</body>
+
+</html>	
